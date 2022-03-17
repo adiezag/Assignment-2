@@ -68,27 +68,31 @@ function removeR() {
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
     let numRows = grid.childElementCount;
+    if (numRows === 0)
+    {
+        alert("No rows");
+    } else {
+
     grid.removeChild(rows[numRows-1]);
+    }
 }
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
     let grid = document.getElementById("grid");
     let row = document.getElementsByTagName("tr")
-    let numCols = row[0].childElementCount;
+    let col = document.getElementsByTagName("td")
     let numRows = grid.childElementCount;
-    if (numCols === 1) // If there's one column, also delete remaining rows
+    if (col.length === 0)
     {
-        for (var i = 0; i < numRows; i++)
+        alert("No columns");
+    } else if (col.length === row.length) // If there's one column, delete all rows
+    {
+        while(grid.firstChild)
         {
-            let child = row[i].firstChild;
-            row[i].removeChild(child);
+            grid.removeChild(grid.firstChild)
         }
-        // Deleting the remaining rows
-        for (var j = 0; j < numRows; j++)
-        {
-            grid.removeChild(row[0]); // Fixed
-        }
+
     }else {
         for (var k = 0; k < numRows; k++)
         {
