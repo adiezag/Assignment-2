@@ -23,6 +23,10 @@ function addR() {
         for (var i = 0; i < numCols; i++)
         {
             let col = document.createElement("td");
+            // To change the color of the cell to the currently selected color
+            col.onclick = function (){
+                this.style.backgroundColor = colorSelected;
+            };
             row.appendChild(col);
         }
         grid.appendChild(row);
@@ -38,6 +42,10 @@ function addC() {
     if (cols.length === 0) {
         let row = document.createElement("tr");
         let col = document.createElement("td");
+        // To change the color of the cell to the currently selected color
+        col.onclick = function (){
+            this.style.backgroundColor = colorSelected;
+        };
         row.appendChild(col);
         grid.appendChild(row);
     }else {
@@ -45,6 +53,10 @@ function addC() {
         for (var j = 0; j < numRows; j++)
         {
             let col = document.createElement("td");
+            // To change the color of the cell to the currently selected color
+            col.onclick = function (){
+                this.style.backgroundColor = colorSelected;
+            };
             rows[j].appendChild(col);
         }
     }
