@@ -117,6 +117,13 @@ function fill(){
 //Clears all cells
 function clearAll(){
     alert("Clicked Clear All")
+    let col = document.getElementsByTagName("td")
+    console.log(col.length);
+    for (let i = 0; i < col.length; i++)
+    {
+        col[i].style.backgroundColor = '';
+    }
+    
 }
 
 //Fills all uncolored cells
