@@ -17,6 +17,15 @@ function addR() {
         grid.appendChild(row);
 
     }
+    else{
+        let row = document.createElement("tr");
+        let numCols = rows[0].childElementCount;
+        for (var i = 0; i < numCols; i++)
+        {
+            let col = document.createElement("td");
+            row.appendChild(col);
+        }
+        grid.appendChild(row);
 }
 //Adds a column
 function addC() {
