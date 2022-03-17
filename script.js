@@ -92,14 +92,25 @@ function selected(){
     console.log(colorSelected);
 }
 
+//Fills all cells
 function fill(){
     alert("Clicked Fill All")
 }
 
+//Clears all cells
 function clearAll(){
     alert("Clicked Clear All")
 }
 
+//Fills all uncolored cells
 function fillU(){
     alert("Clicked Fill All Uncolored")
+    let col = document.getElementsByTagName("td")
+    console.log(col.length);
+    for (let i = 0; i < col.length; i++)
+    {
+        if (col[i].style.backgroundColor === '') {
+            col[i].style.backgroundColor = colorSelected;
+        }
+    }
 }
