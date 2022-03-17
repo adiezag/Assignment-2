@@ -53,6 +53,10 @@ function addC() {
 //Removes a row
 function removeR() {
     alert("Clicked Remove Row")
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    let numRows = grid.childElementCount;
+    grid.removeChild(rows[numRows-1]);
 }
 //Remove a column
 function removeC() {
