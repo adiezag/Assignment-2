@@ -77,7 +77,7 @@ function removeC() {
     let row = document.getElementsByTagName("tr")
     let numCols = row[0].childElementCount;
     let numRows = grid.childElementCount;
-    if (numCols === 1) // If there's one column, also delete the remainig rows
+    if (numCols === 1) // If there's one column, also delete remaining rows
     {
         for (var i = 0; i < numRows; i++)
         {
@@ -87,7 +87,7 @@ function removeC() {
         // Deleting the remaining rows
         for (var j = 0; j < numRows; j++)
         {
-            grid.removeChild(row[j]);
+            grid.removeChild(row[0]); // Fixed
         }
     }else {
         for (var k = 0; k < numRows; k++)
