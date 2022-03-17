@@ -107,6 +107,11 @@ function selected(){
 //Fills all cells
 function fill(){
     alert("Clicked Fill All")
+    let col = document.getElementsByTagName("td");
+    for (let i = 0; i < col.length; i++)
+    {
+        col[i].style.backgroundColor = colorSelected;
+    }
 }
 
 //Clears all cells
