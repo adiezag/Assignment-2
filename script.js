@@ -61,6 +61,30 @@ function removeR() {
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
+    let grid = document.getElementById("grid");
+    let row = document.getElementsByTagName("tr")
+    let numCols = row[0].childElementCount;
+    let numRows = grid.childElementCount;
+    if (numCols === 1) // If there's one column, also delete the remainig rows
+    {
+        for (var i = 0; i < numRows; i++)
+        {
+            let child = row[i].firstChild;
+            row[i].removeChild(child);
+        }
+        // Deleting the remaining rows
+        for (var j = 0; j < numRows; j++)
+        {
+            grid.removeChild(row[j]);
+        }
+    }else {
+        for (var k = 0; k < numRows; k++)
+        {
+            let child = row[k].firstChild;
+            row[k].removeChild(child);
+        }
+    }   
+
 }
 //sets global var for selected color
 function selected(){
